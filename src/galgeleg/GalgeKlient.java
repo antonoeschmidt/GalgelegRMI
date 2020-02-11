@@ -11,6 +11,7 @@ public class GalgeKlient {
         GalgelegInterface glI =(GalgelegInterface) Naming.lookup("rmi://localhost:1099/galgeservice");
         Scanner scan = new Scanner(System.in);
 
+
         runGalgeleg(glI, scan);
     }
 
