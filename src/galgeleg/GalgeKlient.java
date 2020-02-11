@@ -1,5 +1,7 @@
 package galgeleg;
 
+import brugerautorisation.transport.rmi.Brugeradmin;
+
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -11,8 +13,20 @@ public class GalgeKlient {
         GalgelegInterface glI =(GalgelegInterface) Naming.lookup("rmi://localhost:1099/galgeservice");
         Scanner scan = new Scanner(System.in);
 
+        Brugeradmin brugeradmin = (Brugeradmin) Naming.lookup("rmi://javabog.dk/brugeradmin");
+        System.out.println("Indtast studienummer: ");
+        String studienummer = scan.nextLine();
+        System.out.println("Indtast kode: ");
+        String kode = scan.nextLine();
 
-        runGalgeleg(glI, scan);
+        try {
+            brugeradmin.hentBruger(studienummer,kode);
+            System.out.println("Login autoriseret");
+            runGalgeleg(glI, scan);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Forkert brugernavn eller adgangskode. Spillet lukkes.");
+        }
+
     }
 
     private static void runGalgeleg(GalgelegInterface glI, Scanner scan) throws RemoteException {
