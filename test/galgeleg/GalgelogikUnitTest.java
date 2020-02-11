@@ -3,6 +3,8 @@ package galgeleg;
 import galgeleg.Galgelogik;
 import org.junit.Test;
 
+import java.rmi.RemoteException;
+
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -17,7 +19,7 @@ import static org.junit.Assert.assertTrue;
 public class GalgelogikUnitTest {
 
   @Test
-  public void afprøvMedSkovsnegl() {
+  public void afprøvMedSkovsnegl() throws RemoteException {
     Galgelogik spil = new Galgelogik();
     spil.muligeOrd.clear();
     spil.muligeOrd.add("skovsnegl");

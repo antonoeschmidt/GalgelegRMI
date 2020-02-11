@@ -1,8 +1,10 @@
 package galgeleg;
 
+import java.rmi.RemoteException;
+
 public class BenytGalgelogik {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws RemoteException {
 
     Galgelogik spil = new Galgelogik();
     spil.nulstil();
