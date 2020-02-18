@@ -9,10 +9,11 @@ import java.rmi.RemoteException;
 import java.util.Scanner;
 
 public class GalgeKlient {
-    public static void main(String[] args) throws Exception{
-        GalgelegInterface glI =(GalgelegInterface) Naming.lookup("rmi://localhost:1099/galgeservice");
+    public static void main(String[] args) throws Exception {
+        GalgelegInterface glI = (GalgelegInterface) Naming.lookup("rmi://localhost:1099/galgeservice");
         Scanner scan = new Scanner(System.in);
 
+        //TODO: flyt brugeraut. til server
         Brugeradmin brugeradmin = (Brugeradmin) Naming.lookup("rmi://javabog.dk/brugeradmin");
         System.out.println("Indtast studienummer: ");
         String studienummer = scan.nextLine();
@@ -20,7 +21,7 @@ public class GalgeKlient {
         String kode = scan.nextLine();
 
         try {
-            brugeradmin.hentBruger(studienummer,kode);
+            brugeradmin.hentBruger(studienummer, kode);
             System.out.println("Login autoriseret");
             runGalgeleg(glI, scan);
         } catch (IllegalArgumentException e) {
@@ -39,7 +40,6 @@ public class GalgeKlient {
             System.out.println(glI.getSynligtOrd());
             System.out.println(7 - glI.getAntalForkerteBogstaver() + " liv tilbage");
         }
-
         System.out.println(glI.erSpilletVundet() ? "Tillykke du vandt!" : "Du tabte desværre. Ordet du prøvede at gætte var: " + glI.getOrdet());
     }
 
