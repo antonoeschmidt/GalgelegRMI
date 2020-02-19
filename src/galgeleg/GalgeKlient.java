@@ -10,7 +10,10 @@ import java.util.Scanner;
 
 public class GalgeKlient {
     public static void main(String[] args) throws Exception{
-        GalgelegInterface glI =(GalgelegInterface) Naming.lookup("rmi://localhost:1099/galgeservice");
+
+        //GalgelegInterface glI =(GalgelegInterface) Naming.lookup("rmi://localhost:1099/galgeservice");
+        GalgelegInterface glI =(GalgelegInterface) Naming.lookup("rmi://dist.saluton.dk:23609/kontotjeneste");
+        glI.nulstil();
         Scanner scan = new Scanner(System.in);
 
         Brugeradmin brugeradmin = (Brugeradmin) Naming.lookup("rmi://javabog.dk/brugeradmin");
@@ -27,9 +30,12 @@ public class GalgeKlient {
             System.out.println("Forkert brugernavn eller adgangskode. Spillet lukkes.");
         }
 
+
+
     }
 
     private static void runGalgeleg(GalgelegInterface glI, Scanner scan) throws RemoteException {
+        System.out.println("dude");
         glI.nulstil();
         System.out.println("-- Galgeleg starter --");
 
