@@ -9,7 +9,7 @@ public class Testdet {
 
     public static void searchCompany(String firma) {
         System.out.println(Unirest.get("https://cvrapi.dk/api?search=" + firma + "&country=dk&format=xml")
-                .queryString("vat", "")
+                .queryString("", "name")
                 .asString().getBody());
     }
 }
