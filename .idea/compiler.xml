@@ -12,6 +12,8 @@
       <entry name="!?*.clj" />
     </wildcardResourcePatterns>
     <bytecodeTargetLevel>
+      <module name="com.anton.galgeleg.galgeleg.main" target="1.8" />
+      <module name="com.anton.galgeleg.galgeleg.test" target="1.8" />
       <module name="galgeleg.main" target="1.8" />
       <module name="galgeleg.test" target="1.8" />
     </bytecodeTargetLevel>

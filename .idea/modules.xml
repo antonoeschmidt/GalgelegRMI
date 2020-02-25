@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Galgeleg.iml" filepath="$PROJECT_DIR$/Galgeleg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.anton.galgeleg.galgeleg.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.anton.galgeleg.galgeleg.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.anton.galgeleg.galgeleg.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.anton.galgeleg.galgeleg.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/galgeleg.iml" filepath="$PROJECT_DIR$/.idea/modules/galgeleg.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/galgeleg.main.iml" filepath="$PROJECT_DIR$/.idea/modules/galgeleg.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/galgeleg.test.iml" filepath="$PROJECT_DIR$/.idea/modules/galgeleg.test.iml" />
